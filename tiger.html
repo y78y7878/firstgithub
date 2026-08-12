@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>純 CSS 一隻老虎</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        /* 老虎主容器 */
+        .tiger {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        /* 耳朵 */
+        .ear {
+            position: absolute;
+            top: 10px;
+            width: 60px;
+            height: 60px;
+            background-color: #ff9800;
+            border-radius: 50%;
+            border: 5px solid #333;
+        }
+        .ear.left { left: 10px; }
+        .ear.right { right: 10px; }
+        .ear::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #ffcc80;
+            border-radius: 50%;
+        }
+        /* 臉部 */
+        .face {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 170px;
+            height: 150px;
+            background-color: #ff9800;
+            border: 5px solid #333;
+            border-radius: 50% 50% 45% 45%;
+        }
+        /* 眼睛 */
+        .eye {
+            position: absolute;
+            top: 50px;
+            width: 20px;
+            height: 25px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+        .eye.left { left: 45px; }
+        .eye.right { right: 45px; }
+        /* 鼻子 */
+        .nose {
+            position: absolute;
+            top: 75px;
+            left: 75px;
+            width: 20px;
+            height: 15px;
+            background-color: #e91e63;
+            border-radius: 30% 30% 50% 50%;
+        }
+        /* 嘴巴周圍白毛 */
+        .muzzle {
+            position: absolute;
+            top: 85px;
+            left: 55px;
+            width: 60px;
+            height: 35px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: -1;
+            border: 3px solid #333;
+        }
+        /* 斑紋 */
+        .stripe {
+            position: absolute;
+            background-color: #333;
+            border-radius: 10px;
+        }
+        .stripe.center {
+            top: 5px;
+            left: 80px;
+            width: 10px;
+            height: 30px;
+        }
+        .stripe.left {
+            top: 60px;
+            left: 5px;
+            width: 25px;
+            height: 8px;
+        }
+        .stripe.right {
+            top: 60px;
+            right: 5px;
+            width: 25px;
+            height: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tiger">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="face">
+            <div class="stripe center"></div>
+            <div class="stripe left"></div>
+            <div class="stripe right"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="muzzle"></div>
+        </div>
+    </div>
+
+</body>
+</html>
